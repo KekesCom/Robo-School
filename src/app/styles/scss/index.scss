@@ -1,6 +1,2 @@
-// scss entry point
-
-// here can be imports for global libs
-
-// local styles:
-@import './styles/index.scss';
+@import 'reset';
+@import 'global'; // Глобальные стили

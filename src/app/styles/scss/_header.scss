@@ -1,0 +1,69 @@
+@import 'variables';
+@import 'global';
+body {
+  background-color: $color-dark-blue;
+}
+.header {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  &__max {
+    width: $container-header-width;
+  }
+  &__fonts {
+    color: $color-light;
+  }
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: $color-dark-blue;
+    margin-left: 17px;
+  }
+
+  &__logo-text {
+    display: inline-block;
+    text-decoration: none;
+    color: $color-light;
+    font-family: $font-primary;
+    font-weight: $font-weight-semibold;
+    line-height: $line-height;
+    font-style: normal;
+    font-size: 30px;
+    letter-spacing: 0;
+  }
+
+  &__contact {
+    font-weight: $font-weight-semibold;
+    color: $color-light;
+    text-decoration: none;
+    font-size: 30px;
+  }
+
+  &__nav-list {
+    display: flex;
+    gap: 40px;
+    margin-left: 34px;
+  }
+
+  &__nav-link {
+    color: $color-light;
+    text-decoration: none;
+    font-family: $font-primary;
+    font-size: 20px;
+    line-height: $line-height;
+    font-weight: $font-weight-regular;
+    text-wrap: nowrap;
+
+    &:hover {
+      color: gray;
+      transition-duration: 0.2s;
+    }
+  }
+
+  &__body {
+    background: $color-dark-blue;
+    height: 985px;
+    width: 100%;
+  }
+}
