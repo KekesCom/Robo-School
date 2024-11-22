@@ -13,26 +13,32 @@ html {
 section {
   padding: 120px 0;
 }
+
 .container {
   margin: 0 auto;
   max-width: 1160px;
   height: 100%;
   width: 100%;
+
   &-wide {
     max-width: 1720px;
   }
 }
+
 .logo {
   font-size: 30px;
   font-weight: 700;
 }
+
 .tel {
   font-size: 30px;
   font-weight: 600;
+
   &:hover {
     text-decoration: underline;
   }
 }
+
 .btn {
   display: inline-flex;
   justify-content: center;
@@ -44,11 +50,14 @@ section {
   border-radius: $border-radius-button;
   color: $color-light;
   transition: background-color 0.3s ease;
+
   &:hover {
     background-color: $button-color-primary-hover;
   }
+
   &--dark {
     background-color: $color-dark-blue;
+
     &:hover {
       background-color: $button-color-secondary-hover;
       color: $text-color-primary-70;

@@ -1,24 +1,25 @@
 @import 'variables';
-@import 'global';
+
 body {
-  background-color: $color-dark-blue;
+  background-color: $color-light;
 }
+
 .header {
-  display: flex;
-  justify-content: center;
   margin-top: 30px;
+  background-color: $color-dark-blue;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   &__max {
     width: $container-header-width;
   }
+
   &__fonts {
     color: $color-light;
-  }
-  &__container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: $color-dark-blue;
-    margin-left: 17px;
   }
 
   &__logo-text {
@@ -31,6 +32,7 @@ body {
     font-style: normal;
     font-size: 30px;
     letter-spacing: 0;
+    margin-left: 10px;
   }
 
   &__contact {
@@ -43,7 +45,7 @@ body {
   &__nav-list {
     display: flex;
     gap: 40px;
-    margin-left: 34px;
+    margin-left: 40px;
   }
 
   &__nav-link {
