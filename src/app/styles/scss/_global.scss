@@ -16,24 +16,26 @@ section {
 
 .container {
   margin: 0 auto;
-  max-width: 1160px;
+  max-width: 1180px;
   height: 100%;
   width: 100%;
+  padding: 0 10px;
 
   &-wide {
-    max-width: 1720px;
+    max-width: 1740px;
   }
 }
 
 .logo {
   font-size: 30px;
   font-weight: 700;
+  color: $color-light;
 }
 
 .tel {
   font-size: 30px;
   font-weight: 600;
-
+  color: $color-light;
   &:hover {
     text-decoration: underline;
   }

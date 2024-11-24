@@ -1,11 +1,7 @@
 @import 'variables';
 
-body {
-  background-color: $color-light;
-}
-
 .header {
-  margin-top: 30px;
+  padding: 30px 0;
   background-color: $color-dark-blue;
 
   &__content {
@@ -14,58 +10,26 @@ body {
     align-items: center;
   }
 
-  &__max {
-    width: $container-header-width;
-  }
-
-  &__fonts {
-    color: $color-light;
-  }
-
-  &__logo-text {
-    display: inline-block;
-    text-decoration: none;
-    color: $color-light;
-    font-family: $font-primary;
-    font-weight: $font-weight-semibold;
-    line-height: $line-height;
-    font-style: normal;
-    font-size: 30px;
-    letter-spacing: 0;
-    margin-left: 10px;
-  }
-
-  &__contact {
-    font-weight: $font-weight-semibold;
-    color: $color-light;
-    text-decoration: none;
-    font-size: 30px;
-  }
-
-  &__nav-list {
-    display: flex;
-    gap: 40px;
-    margin-left: 40px;
-  }
-
-  &__nav-link {
-    color: $color-light;
-    text-decoration: none;
-    font-family: $font-primary;
-    font-size: 20px;
-    line-height: $line-height;
-    font-weight: $font-weight-regular;
-    text-wrap: nowrap;
-
-    &:hover {
-      color: gray;
-      transition-duration: 0.2s;
+  &-nav {
+    &__list {
+      display: flex;
+      gap: 40px;
+      margin-left: 40px;
     }
-  }
 
-  &__body {
-    background: $color-dark-blue;
-    height: 985px;
-    width: 100%;
+    &__link {
+      color: $color-light;
+      text-decoration: none;
+      font-family: $font-primary;
+      font-size: 20px;
+      line-height: $line-height;
+      font-weight: $font-weight-regular;
+      text-wrap: nowrap;
+
+      &:hover {
+        color: gray;
+        transition-duration: 0.2s;
+      }
+    }
   }
 }
