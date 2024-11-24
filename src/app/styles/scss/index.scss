@@ -1,6 +1,4 @@
-// scss entry point
+@charset 'UTF-8';
 
-// here can be imports for global libs
-
-// local styles:
-@import './styles/index.scss';
+@import './_reset';
+@import './_global'; // Глобальные стили
