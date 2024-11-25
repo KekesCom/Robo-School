@@ -1,110 +1,68 @@
-/* Reset and base styles  */
-* {
-  padding: 0px;
-  margin: 0px;
-  border: none;
+@import 'variables';
+
+body,
+html {
+  min-width: 320px;
+  min-height: 100dvh;
+  margin: 0;
+  font-family: Jost, sans-serif;
+  font-weight: $font-weight-regular;
+  line-height: $line-height;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+section {
+  padding: 120px 0;
 }
 
-/* Links */
+.container {
+  margin: 0 auto;
+  max-width: 1180px;
+  height: 100%;
+  width: 100%;
+  padding: 0 10px;
 
-a,
-a:link,
-a:visited {
-  text-decoration: none;
+  &-wide {
+    max-width: 1740px;
+  }
 }
 
-a:hover {
-  text-decoration: none;
+.logo {
+  font-size: 30px;
+  font-weight: 700;
+  color: $color-light;
 }
 
-/* Common */
-
-aside,
-nav,
-footer,
-header,
-section,
-main {
-  display: block;
+.tel {
+  font-size: 30px;
+  font-weight: 600;
+  color: $color-light;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  font-size: inherit;
-  font-weight: inherit;
-}
-
-ul,
-ul li {
-  list-style: none;
-}
-
-img {
-  vertical-align: top;
-}
-
-img,
-svg {
-  max-width: 100%;
-  height: auto;
-}
-
-address {
-  font-style: normal;
-}
-
-/* Form */
-
-input,
-textarea,
-button,
-select {
-  font-family: inherit;
-  font-size: inherit;
-  color: inherit;
-  background-color: transparent;
-}
-
-input::-ms-clear {
-  display: none;
-}
-
-button,
-input[type='submit'] {
-  display: inline-block;
-  box-shadow: none;
-  background-color: transparent;
-  background: none;
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 54px;
   cursor: pointer;
-}
+  font-size: 18px;
+  background-color: $color-red;
+  border-radius: $border-radius-button;
+  color: $color-light;
+  transition: background-color 0.3s ease;
 
-input:focus,
-input:active,
-button:focus,
-button:active {
-  outline: none;
-}
+  &:hover {
+    background-color: $button-color-primary-hover;
+  }
 
-button::-moz-focus-inner {
-  padding: 0;
-  border: 0;
-}
+  &--dark {
+    background-color: $color-dark-blue;
 
-label {
-  cursor: pointer;
-}
-
-legend {
-  display: block;
+    &:hover {
+      background-color: $button-color-secondary-hover;
+      color: $text-color-primary-70;
+    }
+  }
 }
