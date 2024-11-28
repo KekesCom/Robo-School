@@ -1,7 +1,7 @@
 .promo {
-  height: calc(100dvh - 108px);
+  height: 972px;
   background-color: $color-dark-blue;
-  // overflow: hidden;
+  overflow: hidden;
   position: relative;
 
   &__content {
@@ -26,7 +26,6 @@
     width: 783px;
     height: auto;
     left: 50%;
-    top: -30px;
-    padding: 54px 0;
+    top: 54px;
   }
 }
