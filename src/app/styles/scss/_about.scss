@@ -5,32 +5,26 @@
     color: $color-dark-blue;
   }
 
-  &__wrapper {
-    padding-top: 60px;
+  &__content {
     display: flex;
+    margin-top: 60px;
     flex-wrap: wrap;
     gap: 40px;
-  }
-}
-.bold {
-  font-weight: $font-weight-semibold;
-}
+    justify-content: center;
 
-.about__block {
-  flex: 1 1 calc(25% - 40px);
-  box-sizing: border-box;
-}
+    .about-block {
+      &__number {
+        color: $color-red;
+        font-weight: $font-weight-semibold;
+        font-size: 70px;
+        white-space: nowrap;
+      }
 
-.block {
-  &__number {
-    color: $color-red;
-    font-weight: $font-weight-semibold;
-    font-size: 70px;
-    white-space: nowrap;
-  }
-
-  &__description {
-    font-size: 18px;
-    color: $color-gray;
+      &__description {
+        font-size: 18px;
+        color: $color-gray;
+        max-width: 260px;
+      }
+    }
   }
 }
