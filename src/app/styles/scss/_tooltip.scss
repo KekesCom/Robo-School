@@ -1,0 +1,38 @@
+.tooltip {
+  &__container {
+    position: absolute;
+    width: 251px;
+    height: 56px;
+    top: -60px;
+    left: 110px;
+    border: 1px solid rgba($color-gray, 0.2);
+    border-radius: $border-radius-button;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: none;
+    visibility: hidden;
+    transition: visibility 0.3s ease;
+  }
+
+  &__description {
+    text-align: center;
+    color: $color-dark-blue;
+    font-size: 16px;
+    font-weight: $font-weight-regular;
+  }
+
+  &__icon {
+    cursor: help;
+    position: relative;
+
+    &:hover + .tooltip__container {
+      visibility: visible;
+    }
+  }
+
+  &__container:hover {
+    visibility: visible;
+    cursor: help;
+  }
+}

@@ -1,0 +1,32 @@
+.benefits {
+  &__title {
+    font-weight: $font-weight-semibold;
+    font-size: 50px;
+    max-width: 682px;
+    color: $color-dark-blue;
+  }
+
+  &__content {
+    display: flex;
+    margin-top: 60px;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+
+    .benefits-block {
+      position: relative;
+      &__title {
+        color: $color-dark-blue;
+        font-weight: $font-weight-semibold;
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      &__description {
+        font-size: 18px;
+        color: $color-gray;
+        max-width: 360px;
+      }
+    }
+  }
+}
