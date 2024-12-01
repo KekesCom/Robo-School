@@ -1,8 +1,9 @@
 .benefits {
+  background-color: $color-light;
+
   &__title {
     font-weight: $font-weight-semibold;
     font-size: 50px;
-    max-width: 682px;
     color: $color-dark-blue;
   }
 
@@ -15,17 +16,18 @@
 
     .benefits-block {
       position: relative;
+
       &__title {
         color: $color-dark-blue;
         font-weight: $font-weight-semibold;
         font-size: 24px;
-        margin-bottom: 20px;
       }
 
       &__description {
         font-size: 18px;
         color: $color-gray;
         max-width: 360px;
+        margin-top: 20px;
       }
     }
   }

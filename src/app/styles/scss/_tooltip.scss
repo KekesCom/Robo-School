@@ -1,38 +1,38 @@
 .tooltip {
-  &__container {
-    position: absolute;
-    width: 251px;
-    height: 56px;
-    top: -60px;
-    left: 110px;
-    border: 1px solid rgba($color-gray, 0.2);
-    border-radius: $border-radius-button;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-top: none;
-    visibility: hidden;
-    transition: visibility 0.3s ease;
-  }
-
-  &__description {
-    text-align: center;
-    color: $color-dark-blue;
-    font-size: 16px;
-    font-weight: $font-weight-regular;
-  }
+  position: relative;
+  display: inline-block;
+  cursor: help;
 
   &__icon {
-    cursor: help;
     position: relative;
-
-    &:hover + .tooltip__container {
-      visibility: visible;
-    }
+    cursor: help;
+    z-index: 1;
   }
 
-  &__container:hover {
-    visibility: visible;
-    cursor: help;
+  &__text {
+    display: none;
+    position: absolute;
+    bottom: 45px;
+    left: 0;
+    padding: 14px 12px;
+    border: 1px solid rgba($color-gray, 0.2);
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: $font-weight-regular;
+    color: $color-dark-blue;
+    text-wrap: nowrap;
+    border-top: none;
+  }
+  &:hover &__text {
+    display: block;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
   }
 }
