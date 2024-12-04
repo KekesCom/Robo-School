@@ -1,38 +1,27 @@
 .tooltip {
   position: relative;
-  display: inline-block;
+  padding: 10px 10px 10px 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   cursor: help;
-
-  &__icon {
-    position: relative;
-    cursor: help;
-    z-index: 1;
-  }
 
   &__text {
     display: none;
     position: absolute;
     bottom: 45px;
     left: 0;
+    width: 251px;
     padding: 14px 12px;
-    border: 1px solid rgba($color-gray, 0.2);
+    box-shadow: 0 2px 8px 0 #1410241a;
     border-radius: 5px;
     font-size: 16px;
     font-weight: $font-weight-regular;
     color: $color-dark-blue;
-    text-wrap: nowrap;
-    border-top: none;
-  }
-  &:hover &__text {
-    display: block;
+    justify-content: center;
   }
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: -10px;
-    right: -5px;
-    bottom: -5px;
-    left: -5px;
+  &:hover &__text {
+    display: flex;
   }
 }
