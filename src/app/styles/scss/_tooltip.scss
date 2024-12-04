@@ -1,6 +1,7 @@
 .tooltip {
-  position: relative;
-  padding: 10px 10px 10px 0;
+  position: absolute;
+  padding: 10px;
+  bottom: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -9,16 +10,16 @@
   &__text {
     display: none;
     position: absolute;
-    bottom: 45px;
-    left: 0;
-    width: 251px;
+    bottom: 100%;
+    left: 10%;
     padding: 14px 12px;
     box-shadow: 0 2px 8px 0 #1410241a;
     border-radius: 5px;
     font-size: 16px;
     font-weight: $font-weight-regular;
     color: $color-dark-blue;
-    justify-content: center;
+    width: max-content;
+    max-width: 260px;
   }
 
   &:hover &__text {
