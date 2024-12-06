@@ -1,0 +1,83 @@
+.teachers {
+  &__title {
+    font-size: 50px;
+    font-weight: $font-weight-semibold;
+    color: $color-dark-blue;
+  }
+
+  &__content {
+    margin-top: 60px;
+    display: flex;
+    gap: 40px;
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    .teachers-block {
+      flex: 0 0 360px;
+
+      &__img {
+        height: auto;
+      }
+
+      &__info {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        gap: 10px;
+      }
+
+      &__name {
+        color: $color-dark-blue;
+        font-weight: $font-weight-semibold;
+        font-size: 24px;
+      }
+
+      &__position {
+        color: $color-gray;
+        font-size: 18px;
+      }
+
+      &__link {
+        color: $color-red;
+        font-size: 18px;
+        &:hover {
+          color: $button-color-primary-hover;
+        }
+      }
+    }
+  }
+}
+.controls {
+  margin-top: 77px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__scrollbar {
+    position: relative;
+    width: 100%;
+    max-width: 360px;
+    height: 5px;
+    background-color: $color-light-gray;
+    border-radius: 5px;
+  }
+
+  &__thumb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100%;
+    background-color: $color-dark-blue;
+    border-radius: 5px;
+  }
+
+  &__arrows {
+    display: flex;
+    gap: 10px;
+
+    &-next {
+      transform: scaleX(-1);
+    }
+  }
+}
