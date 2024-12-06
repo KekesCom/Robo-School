@@ -7,16 +7,20 @@
 
   &__content {
     margin-top: 60px;
+    align-items: flex-end;
     display: flex;
     gap: 40px;
     overflow-x: auto;
     scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     .teachers-block {
       flex: 0 0 360px;
 
       &__img {
-        height: auto;
+        border-radius: $border-radius-card;
       }
 
       &__info {
@@ -46,38 +50,40 @@
       }
     }
   }
-}
-.controls {
-  margin-top: 77px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  &__scrollbar {
-    position: relative;
-    width: 100%;
-    max-width: 360px;
-    height: 5px;
-    background-color: $color-light-gray;
-    border-radius: 5px;
-  }
-
-  &__thumb {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 70%;
-    height: 100%;
-    background-color: $color-dark-blue;
-    border-radius: 5px;
-  }
-
-  &__arrows {
+  .controls {
+    margin-top: 77px;
     display: flex;
-    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
 
-    &-next {
-      transform: scaleX(-1);
+    &__scrollbar {
+      position: relative;
+      width: 100%;
+      max-width: 360px;
+      height: 5px;
+      background-color: $color-light-gray;
+      border-radius: 5px;
+    }
+
+    &__thumb {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 70%;
+      height: 100%;
+      background-color: $color-dark-blue;
+      border-radius: 5px;
+    }
+
+    &__arrows {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      &-prev,
+      &-next {
+        height: 34px;
+      }
     }
   }
 }
