@@ -13,17 +13,15 @@
     flex-wrap: wrap;
 
     .prices-block {
+      max-width: 360px;
+      transition: transform 0.3s ease-in-out;
       position: relative;
-      width: 360px;
-      height: 460px;
       border: 1px solid $color-light-gray;
       border-radius: $border-radius-card;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding-top: 40px;
-      padding-bottom: 40px; /* Общий отступ снизу для всех блоков */
-      transition: height 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+      padding: 38px 38px 40px;
 
       &__title {
         font-weight: $font-weight-semibold;
@@ -37,6 +35,7 @@
           content: '';
           position: absolute;
           top: 50%;
+          transform: translateY(-50%);
           width: 15px;
           height: 3px;
           background-color: $color-dark-blue;
@@ -59,14 +58,15 @@
       }
 
       &__description {
+        flex-grow: 1;
         margin-top: 20px;
         font-size: 18px;
         color: $color-dark-blue;
         text-align: center;
+        margin-bottom: 32px;
       }
 
       &__button {
-        margin-top: auto;
         width: 280px;
         height: 79px;
       }
@@ -76,20 +76,28 @@
       }
 
       &:hover {
-        height: 500px;
+        transform: scale(1.1);
+        transform-origin: center;
+        z-index: 1;
         background-color: $color-dark-blue;
-        color: $color-light;
 
-        .prices-block__title,
-        .prices-block__price,
-        .prices-block__description,
-        .prices-block__button {
-          color: $color-light;
-        }
+        .prices-block {
+          &__title {
+            color: $color-light;
 
-        .prices-block__title::before,
-        .prices-block__title::after {
-          background-color: $color-light;
+            &::before,
+            &::after {
+              background-color: $color-light;
+            }
+          }
+
+          &__price {
+            color: $color-light;
+          }
+
+          &__description {
+            color: $color-light;
+          }
         }
       }
     }
