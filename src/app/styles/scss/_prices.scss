@@ -1,0 +1,105 @@
+.prices {
+  &__title {
+    font-size: 50px;
+    font-weight: $font-weight-semibold;
+    color: $color-dark-blue;
+  }
+
+  &__content {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+
+    .prices-block {
+      max-width: 360px;
+      transition: transform 0.3s ease-in-out;
+      position: relative;
+      border: 1px solid $color-light-gray;
+      border-radius: $border-radius-card;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 38px 38px 40px;
+
+      &__title {
+        font-weight: $font-weight-semibold;
+        font-size: 30px;
+        color: $color-dark-blue;
+        text-transform: uppercase;
+        position: relative;
+
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 15px;
+          height: 3px;
+          background-color: $color-dark-blue;
+        }
+
+        &::before {
+          left: -25px;
+        }
+
+        &::after {
+          right: -25px;
+        }
+      }
+
+      &__price {
+        margin-top: 63px;
+        font-weight: $font-weight-semibold;
+        font-size: 50px;
+        color: $color-dark-blue;
+      }
+
+      &__description {
+        flex-grow: 1;
+        margin-top: 20px;
+        font-size: 18px;
+        color: $color-dark-blue;
+        text-align: center;
+        margin-bottom: 32px;
+      }
+
+      &__button {
+        width: 280px;
+        height: 79px;
+      }
+
+      &:first-child {
+        padding-bottom: 40px;
+      }
+
+      &:hover {
+        transform: scale(1.1);
+        transform-origin: center;
+        z-index: 1;
+        background-color: $color-dark-blue;
+
+        .prices-block {
+          &__title {
+            color: $color-light;
+
+            &::before,
+            &::after {
+              background-color: $color-light;
+            }
+          }
+
+          &__price {
+            color: $color-light;
+          }
+
+          &__description {
+            color: $color-light;
+          }
+        }
+      }
+    }
+  }
+}
