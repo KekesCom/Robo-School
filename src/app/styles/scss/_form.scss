@@ -1,0 +1,59 @@
+.form {
+  background-color: $color-red;
+  display: flex;
+  background-image: url('../shared/img/Percent.png');
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+
+  &__text {
+    max-width: 396px;
+  }
+
+  &__title {
+    color: $color-light;
+    font-size: 36px;
+    font-weight: $font-weight-semibold;
+  }
+
+  &__description {
+    margin-top: 20px;
+    color: $color-light;
+    font-size: 20px;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 40px;
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    gap: 10px;
+
+    .form-block {
+      &__input {
+        height: 64px;
+        background-color: $color-light;
+        border-radius: $border-radius-button;
+        padding: 20px 19px;
+        font-size: 18px;
+        color: $color-gray;
+      }
+
+      &__button {
+        background-color: $color-dark-blue;
+
+        &:hover {
+          background-color: $color-light;
+          color: $color-dark-blue;
+        }
+      }
+    }
+  }
+}
