@@ -1,14 +1,14 @@
 .form {
   background-color: $color-red;
-  display: flex;
   background-image: url('../shared/img/Percent.png');
-  background-size: 100%;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-position-y: bottom;
+  padding: 87px 0 87px;
 
   &__text {
-    max-width: 396px;
+    width: 500px;
   }
 
   &__title {
@@ -37,6 +37,8 @@
     gap: 10px;
 
     .form-block {
+      margin-top: 87px;
+
       &__input {
         height: 64px;
         background-color: $color-light;
@@ -48,10 +50,11 @@
 
       &__button {
         background-color: $color-dark-blue;
+        height: 64px;
 
         &:hover {
-          background-color: $color-light;
-          color: $color-dark-blue;
+          background-color: $button-color-secondary-hover;
+          color: $text-color-primary-70;
         }
       }
     }
