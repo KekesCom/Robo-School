@@ -1,0 +1,16 @@
+.footer {
+  padding: 40px 0;
+  background-color: $color-dark-blue;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__description {
+    color: $color-light;
+    font-size: 16px;
+    margin-top: 5px;
+  }
+}
