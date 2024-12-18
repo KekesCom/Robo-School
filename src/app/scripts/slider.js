@@ -1,68 +1,90 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const content = document.querySelector('.teachers__content')
-  const prevButton = document.getElementById('prev')
-  const nextButton = document.getElementById('next')
-  const scrollbar = document.querySelector('.controls__scrollbar')
-  const thumb = document.querySelector('.controls__thumb')
+const content = document.querySelector('.teachers__content');
+const prevButton = document.getElementById('prev');
+const nextButton = document.getElementById('next');
+const scrollbar = document.querySelector('.controls__scrollbar');
+const thumb = document.querySelector('.controls__thumb');
 
-  const cardWidth = 360
-  const gap = 40
-  const scrollStep = cardWidth + gap
-  const maxScroll = content.scrollWidth - content.clientWidth
+const cardWidth = 360;
+const gap = 40;
+const scrollStep = cardWidth + gap;
+let maxScroll = content.scrollWidth - content.clientWidth;
 
-  const updateThumbPosition = () => {
-    const scrollLeft = content.scrollLeft
-    const scrollRatio = scrollLeft / maxScroll
-    const scrollbarWidth = scrollbar.clientWidth - thumb.clientWidth
-    thumb.style.left = `${scrollRatio * scrollbarWidth}px`
+const updateButtons = () => {
+  prevButton.disabled = content.scrollLeft <= 0;
+  nextButton.disabled = content.scrollLeft >= maxScroll;
+};
+
+const updateThumbWidth = () => {
+  const visibleRatio = content.clientWidth / content.scrollWidth;
+  thumb.style.width = `${visibleRatio * 100}%`;
+};
+
+const updateThumbPosition = () => {
+  const scrollLeft = content.scrollLeft;
+  const scrollRatio = scrollLeft / maxScroll;
+  const scrollbarWidth = scrollbar.clientWidth - thumb.clientWidth;
+  thumb.style.left = `${scrollRatio * scrollbarWidth}px`;
+};
+
+const handlePrevClick = () => {
+  content.scrollBy({ left: -scrollStep, behavior: 'smooth' });
+};
+
+const handleNextClick = () => {
+  content.scrollBy({ left: scrollStep, behavior: 'smooth' });
+};
+
+const handleScroll = () => {
+  updateThumbPosition();
+  updateButtons();
+};
+
+let isDragging = false;
+let startX;
+let thumbStartLeft;
+
+const handleMouseDown = event => {
+  isDragging = true;
+  startX = event.clientX;
+  thumbStartLeft = parseInt(window.getComputedStyle(thumb).left, 10);
+  document.body.classList.add('no-select');
+};
+
+const handleMouseMove = event => {
+  if (!isDragging) {
+    return;
   }
 
-  const updateButtons = () => {
-    prevButton.disabled = content.scrollLeft <= 0
-    nextButton.disabled = content.scrollLeft >= maxScroll
-  }
+  const deltaX = event.clientX - startX;
+  const scrollbarWidth = scrollbar.clientWidth - thumb.clientWidth;
+  let newLeft = thumbStartLeft + deltaX;
 
-  prevButton.addEventListener('click', () => {
-    content.scrollBy({ left: -scrollStep, behavior: 'smooth' })
-  })
+  newLeft = Math.max(0, Math.min(newLeft, scrollbarWidth));
 
-  nextButton.addEventListener('click', () => {
-    content.scrollBy({ left: scrollStep, behavior: 'smooth' })
-  })
+  const scrollRatio = newLeft / scrollbarWidth;
+  content.scrollLeft = scrollRatio * maxScroll;
+};
 
-  let isDragging = false
-  let startX
-  let thumbStartLeft
+const handleMouseUp = () => {
+  isDragging = false;
+  document.body.classList.remove('no-select');
+};
 
-  thumb.addEventListener('mousedown', e => {
-    isDragging = true
-    startX = e.clientX
-    thumbStartLeft = parseInt(window.getComputedStyle(thumb).left, 10)
-    document.body.classList.add('no-select')
-  })
+const handleResize = () => {
+  maxScroll = content.scrollWidth - content.clientWidth;
+  updateThumbWidth();
+  updateThumbPosition();
+  updateButtons();
+};
 
-  document.addEventListener('mousemove', e => {
-    if (!isDragging) return
-    const deltaX = e.clientX - startX
-    const scrollbarWidth = scrollbar.clientWidth - thumb.clientWidth
-    let newLeft = thumbStartLeft + deltaX
+prevButton.addEventListener('click', handlePrevClick);
+nextButton.addEventListener('click', handleNextClick);
+content.addEventListener('scroll', handleScroll);
+thumb.addEventListener('mousedown', handleMouseDown);
+document.addEventListener('mousemove', handleMouseMove);
+document.addEventListener('mouseup', handleMouseUp);
+window.addEventListener('resize', handleResize);
 
-    newLeft = Math.max(0, Math.min(newLeft, scrollbarWidth))
-
-    const scrollRatio = newLeft / scrollbarWidth
-    content.scrollLeft = scrollRatio * maxScroll
-  })
-
-  document.addEventListener('mouseup', () => {
-    isDragging = false
-    document.body.classList.remove('no-select')
-  })
-
-  content.addEventListener('scroll', () => {
-    updateThumbPosition()
-    updateButtons()
-  })
-
-  updateThumbPosition()
-  updateButtons()
-})
+updateThumbWidth();
+updateThumbPosition();
+updateButtons();

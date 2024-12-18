@@ -6,7 +6,6 @@
   }
 
   &__content {
-    transition: transform 0.3s ease-in-out;
     margin-top: 60px;
     align-items: flex-end;
     display: flex;
@@ -84,6 +83,12 @@
       &-prev,
       &-next {
         display: flex;
+
+        &:disabled {
+          background-color: $color-gray;
+          border-radius: 50%;
+          cursor: not-allowed;
+        }
       }
     }
   }
