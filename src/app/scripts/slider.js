@@ -43,14 +43,14 @@ let isDragging = false;
 let startX;
 let thumbStartLeft;
 
-const handleMouseDown = event => {
+const handleMouseDown = (event) => {
   isDragging = true;
   startX = event.clientX;
   thumbStartLeft = parseInt(window.getComputedStyle(thumb).left, 10);
   document.body.classList.add('no-select');
 };
 
-const handleMouseMove = event => {
+const handleMouseMove = (event) => {
   if (!isDragging) {
     return;
   }
