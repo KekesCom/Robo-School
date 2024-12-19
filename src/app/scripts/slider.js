@@ -4,9 +4,6 @@ const nextButton = document.getElementById('next');
 const scrollbar = document.querySelector('.controls__scrollbar');
 const thumb = document.querySelector('.controls__thumb');
 
-const cardWidth = 360;
-const gap = 40;
-const scrollStep = cardWidth + gap;
 let maxScroll = content.scrollWidth - content.clientWidth;
 
 const updateButtons = () => {
@@ -27,11 +24,11 @@ const updateThumbPosition = () => {
 };
 
 const handlePrevClick = () => {
-  content.scrollBy({ left: -scrollStep, behavior: 'smooth' });
+  content.scrollBy({ left: -content.clientWidth, behavior: 'smooth' });
 };
 
 const handleNextClick = () => {
-  content.scrollBy({ left: scrollStep, behavior: 'smooth' });
+  content.scrollBy({ left: content.clientWidth, behavior: 'smooth' });
 };
 
 const handleScroll = () => {
