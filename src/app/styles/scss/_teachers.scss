@@ -18,7 +18,6 @@
 
     .teachers-block {
       flex: 0 0 360px;
-
       &__img {
         border-radius: $border-radius-card;
       }
@@ -73,6 +72,7 @@
       height: 100%;
       background-color: $color-dark-blue;
       border-radius: 5px;
+      cursor: grab;
     }
 
     &__arrows {
@@ -83,6 +83,12 @@
       &-prev,
       &-next {
         display: flex;
+
+        &:disabled {
+          background-color: $color-gray;
+          border-radius: 50%;
+          cursor: not-allowed;
+        }
       }
     }
   }
