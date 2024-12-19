@@ -47,4 +47,7 @@
       }
     }
   }
+  .input--invalid {
+    border: 1px solid $color-red;
+  }
 }
