@@ -22,34 +22,34 @@ let formData = {
   }
 };
 
-function handleNameValueChange(event) {
+const handleNameValueChange = (event) => {
   formData.name.value = event.target.value;
   formData.name.isValid = true;
   nameInput.classList.remove('input--invalid');
-}
+};
 nameInput.addEventListener('keydown', handleNameValueChange);
 nameInput.addEventListener('paste', handleNameValueChange);
 nameInput.addEventListener('input', handleNameValueChange);
 
-function handlePhoneValueChange(event) {
+const handlePhoneValueChange = (event) => {
   formData.phone.value = event.target.value;
   formData.phone.isValid = true;
   phoneInput.classList.remove('input--invalid');
-}
+};
 phoneInput.addEventListener('keydown', handlePhoneValueChange);
 phoneInput.addEventListener('paste', handlePhoneValueChange);
 phoneInput.addEventListener('input', handlePhoneValueChange);
 
-function handleEmailValueChange(event) {
+const handleEmailValueChange = (event) => {
   formData.email.value = event.target.value;
   formData.email.isValid = true;
   emailInput.classList.remove('input--invalid');
-}
+};
 emailInput.addEventListener('keydown', handleEmailValueChange);
 emailInput.addEventListener('paste', handleEmailValueChange);
 emailInput.addEventListener('input', handleEmailValueChange);
 
-function checkNameValidity() {
+const checkNameValidity = () => {
   const isValidValue = formData.name.value.match(regexName);
   formData.name.isValid = isValidValue;
 
@@ -59,9 +59,9 @@ function checkNameValidity() {
   }
 
   nameInput.classList.remove('input--invalid');
-}
+};
 
-function checkPhoneValidity() {
+const checkPhoneValidity = () => {
   const isValidValue = formData.phone.value.match(regexPhone);
   formData.phone.isValid = isValidValue;
 
@@ -70,9 +70,9 @@ function checkPhoneValidity() {
     return;
   }
   phoneInput.classList.remove('input--invalid');
-}
+};
 
-function checkEmailValidity() {
+const checkEmailValidity = () => {
   const isValidValue = formData.email.value.match(regexEmail);
   formData.email.isValid = isValidValue;
 
@@ -81,9 +81,9 @@ function checkEmailValidity() {
     return;
   }
   emailInput.classList.remove('input--invalid');
-}
+};
 
-function clearInputs() {
+const clearInputs = () => {
   formData = {
     name: {
       value: '',
@@ -102,26 +102,27 @@ function clearInputs() {
   nameInput.value = '';
   phoneInput.value = '';
   emailInput.value = '';
-}
+};
 
-function checkFormValidity() {
+const checkFormValidity = () => {
   checkNameValidity();
   checkPhoneValidity();
   checkEmailValidity();
 
   const formNativeValidity = form.checkValidity();
-  const isAllInputsValid = Object.values(formData).filter((value) => !value.isValid).length;
+  const isAllInputsValid = Object.values(formData).filter((value) => !value.isValid).length === 0;
+  const isFormValid = formNativeValidity && isAllInputsValid;
 
-  if (formNativeValidity && Boolean(!isAllInputsValid)) {
-    console.log({
-      name: formData.name.value,
-      phone: formData.phone.value,
-      email: formData.email.value
-    });
+  if (!isFormValid) return;
 
-    clearInputs();
-  }
-}
+  console.log({
+    name: formData.name.value,
+    phone: formData.phone.value,
+    email: formData.email.value
+  });
+
+  clearInputs();
+};
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
