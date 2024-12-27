@@ -1,0 +1,140 @@
+.modal {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #00000050;
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+
+  &__content {
+    width: 940px;
+    height: 768px;
+    padding: 40px;
+    background: $color-light;
+    border-radius: $border-radius-card;
+    box-shadow: 0 10px 30px #00000050;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 40px;
+      left: 0;
+      width: 800px;
+      height: 40px;
+      background-image: linear-gradient(to bottom, #ffffff00, #ffffffff);
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &__img {
+    width: 160px;
+    height: 222px;
+    margin-right: 40px;
+    border-radius: $border-radius-card;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    color: $color-dark-blue;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: $font-weight-semibold;
+  }
+
+  &__description {
+    font-size: 18px;
+    color: $color-gray;
+    margin-top: 10px;
+  }
+
+  &__social {
+    display: flex;
+  }
+
+  &__socials {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+  }
+
+  &__close {
+    font-size: 18px;
+    color: $color-gray;
+    cursor: pointer;
+    margin-left: auto;
+    align-self: flex-start;
+
+    &:hover {
+      color: $color-dark-blue;
+      transition-duration: 0.3s;
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-right: 222px;
+  }
+
+  &__tab {
+    margin-top: 30px;
+    cursor: pointer;
+    font-size: 20px;
+    color: $color-gray;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $color-dark-blue;
+    }
+  }
+
+  &__tab.active {
+    color: $color-red;
+  }
+
+  &__sections {
+    margin-top: 20px;
+    overflow-y: auto;
+    border: 1px solid #5c5e5e20;
+    border-left: none;
+    border-bottom: none;
+    border-right: none;
+    padding-top: 20px;
+    padding-bottom: 40px;
+
+    &-title {
+      margin-bottom: 20px;
+      margin-top: 40px;
+      font-size: 24px;
+      font-weight: $font-weight-semibold;
+    }
+  }
+
+  &__section {
+    display: none;
+    font-size: 20px;
+    color: $color-dark-blue;
+  }
+
+  &__section.active {
+    display: block;
+  }
+}
