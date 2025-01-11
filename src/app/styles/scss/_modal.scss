@@ -1,27 +1,17 @@
 .modal {
-  display: flex;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #00000050;
-  z-index: 1000;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-
+  &.open {
+    display: flex;
+  }
   &__content {
-    width: 940px;
-    height: 768px;
     padding: 40px;
     background: $color-light;
     border-radius: $border-radius-card;
-    box-shadow: 0 10px 30px #00000050;
+    box-shadow: 0 10px 30px $color-shadow-gray;
     display: flex;
     flex-direction: column;
     position: relative;
     overflow: hidden;
+    height: 768px;
 
     &::after {
       content: '';
@@ -30,27 +20,39 @@
       left: 0;
       width: 800px;
       height: 40px;
-      background-image: linear-gradient(to bottom, #ffffff00, #ffffffff);
+      background-image: $fade;
     }
   }
 
-  &__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+  &__close-btn {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: $color-gray;
+
+    &:hover {
+      color: $color-dark-blue;
+      transition-duration: 0.3s;
+    }
   }
 
   &__img {
-    width: 160px;
-    height: 222px;
-    margin-right: 40px;
     border-radius: $border-radius-card;
+    max-width: 160px;
+    max-height: 222px;
+    width: auto;
+    height: auto;
+    margin-right: 40px;
   }
 
   &__text {
     display: flex;
     flex-direction: column;
-    color: $color-dark-blue;
+    row-gap: 10px;
   }
 
   &__title {
@@ -61,45 +63,33 @@
   &__description {
     font-size: 18px;
     color: $color-gray;
-    margin-top: 10px;
+  }
+
+  &__socials {
+    display: flex;
+    gap: 10px;
   }
 
   &__social {
     display: flex;
   }
 
-  &__socials {
-    margin-top: 10px;
+  .some-content {
     display: flex;
-    gap: 10px;
-  }
-
-  &__close {
-    font-size: 18px;
-    color: $color-gray;
-    cursor: pointer;
-    margin-left: auto;
-    align-self: flex-start;
-
-    &:hover {
-      color: $color-dark-blue;
-      transition-duration: 0.3s;
-    }
+    width: 860px;
   }
 
   &__tabs {
-    display: flex;
-    justify-content: space-between;
     margin-top: 20px;
-    margin-right: 222px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 180px;
+    font-size: 20px;
+    color: $color-gray;
   }
 
   &__tab {
-    margin-top: 30px;
-    cursor: pointer;
-    font-size: 20px;
-    color: $color-gray;
-    transition: color 0.3s;
+    padding: 20px 10px;
 
     &:hover {
       color: $color-dark-blue;
@@ -111,20 +101,20 @@
   }
 
   &__sections {
-    margin-top: 20px;
+    padding-top: 20px;
     overflow-y: auto;
-    border: 1px solid #5c5e5e20;
+    border: 1px solid $border-color-gray;
     border-left: none;
     border-bottom: none;
     border-right: none;
-    padding-top: 20px;
     padding-bottom: 40px;
 
     &-title {
-      margin-bottom: 20px;
       margin-top: 40px;
+      margin-bottom: 20px;
       font-size: 24px;
       font-weight: $font-weight-semibold;
+      color: $color-dark-blue;
     }
   }
 
