@@ -1,105 +1,84 @@
-.modal {
-  &.open {
-    display: flex;
-  }
-  &__content {
-    padding: 40px;
-    background: $color-light;
-    border-radius: $border-radius-card;
-    box-shadow: 0 10px 30px $color-shadow-gray;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    overflow: hidden;
-    height: 768px;
+.teacher-modal {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  height: 688px;
+  width: 860px;
 
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: 40px;
-      left: 0;
-      width: 800px;
-      height: 40px;
-      background-image: $fade;
-    }
-  }
-
-  &__close-btn {
+  &::after {
+    content: '';
     position: absolute;
-    top: 40px;
-    right: 40px;
-    background: none;
-    border: none;
-    font-size: 18px;
-    cursor: pointer;
-    color: $color-gray;
+    bottom: 0;
+    left: 0;
+    width: 800px;
+    height: 40px;
+    background-image: $fade;
+  }
 
-    &:hover {
-      color: $color-dark-blue;
-      transition-duration: 0.3s;
+  .teacher-info {
+    display: flex;
+
+    &__img {
+      border-radius: $border-radius-card;
+      max-width: 160px;
+      max-height: 222px;
+      width: auto;
+      height: auto;
+      margin-right: 40px;
+    }
+
+    &__text {
+      display: flex;
+      flex-direction: column;
+      row-gap: 10px;
+    }
+
+    &__title {
+      font-size: 24px;
+      font-weight: $font-weight-semibold;
+    }
+
+    &__description {
+      font-size: 18px;
+      color: $color-gray;
+    }
+
+    &__socials {
+      display: flex;
+      gap: 10px;
+
+      .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     }
   }
 
-  &__img {
-    border-radius: $border-radius-card;
-    max-width: 160px;
-    max-height: 222px;
-    width: auto;
-    height: auto;
-    margin-right: 40px;
-  }
-
-  &__text {
-    display: flex;
-    flex-direction: column;
-    row-gap: 10px;
-  }
-
-  &__title {
-    font-size: 24px;
-    font-weight: $font-weight-semibold;
-  }
-
-  &__description {
-    font-size: 18px;
-    color: $color-gray;
-  }
-
-  &__socials {
-    display: flex;
-    gap: 10px;
-  }
-
-  &__social {
-    display: flex;
-  }
-
-  .some-content {
-    display: flex;
-    width: 860px;
-  }
-
-  &__tabs {
+  .teacher-tabs {
     margin-top: 20px;
     display: flex;
-    justify-content: flex-start;
-    gap: 180px;
+    justify-content: stretch;
     font-size: 20px;
     color: $color-gray;
-  }
 
-  &__tab {
-    padding: 20px 10px;
+    &__tab {
+      padding: 20px 0;
+      width: 100%;
+      text-align: left;
 
-    &:hover {
-      color: $color-dark-blue;
+      &:hover {
+        color: $color-dark-blue;
+      }
+    }
+    .active {
+      color: $color-red;
     }
   }
+}
 
-  &__tab.active {
-    color: $color-red;
-  }
-
+.content {
   &__sections {
     padding-top: 20px;
     overflow-y: auto;

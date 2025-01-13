@@ -27,8 +27,8 @@ modal.addEventListener('click', (event) => {
   }
 });
 
-const tabs = document.querySelectorAll('.modal__tab');
-const sections = document.querySelectorAll('.modal__section');
+const tabs = document.querySelectorAll('.teacher-tabs__tab');
+const sections = document.querySelectorAll('.content__section');
 
 tabs.forEach((tab) => {
   tab.addEventListener('click', () => {
