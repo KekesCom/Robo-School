@@ -7,10 +7,10 @@ const openModal = () => {
   document.body.style.overflow = 'hidden';
 };
 
-function closeModal() {
+const closeModal = () => {
   modal.classList.remove('open');
   document.body.style.overflow = '';
-}
+};
 
 teacherLinks.forEach((link) => {
   link.addEventListener('click', (event) => {
@@ -28,7 +28,7 @@ modal.addEventListener('click', (event) => {
 });
 
 const tabs = document.querySelectorAll('.teacher-tabs__tab');
-const sections = document.querySelectorAll('.content__section');
+const sections = document.querySelectorAll('.teacher-sections__section');
 
 tabs.forEach((tab) => {
   tab.addEventListener('click', () => {
@@ -38,7 +38,6 @@ tabs.forEach((tab) => {
     sections.forEach((section) => {
       section.classList.remove('active');
     });
-
     tab.classList.add('active');
     const targetSection = document.getElementById(tab.dataset.tab);
     targetSection.classList.add('active');

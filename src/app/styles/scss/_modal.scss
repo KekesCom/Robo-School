@@ -11,21 +11,19 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 800px;
+    width: 98%;
     height: 40px;
     background-image: $fade;
   }
 
   .teacher-info {
     display: flex;
+    gap: 40px;
 
     &__img {
       border-radius: $border-radius-card;
-      max-width: 160px;
-      max-height: 222px;
+      height: 222px;
       width: auto;
-      height: auto;
-      margin-right: 40px;
     }
 
     &__text {
@@ -71,15 +69,14 @@
       &:hover {
         color: $color-dark-blue;
       }
-    }
-    .active {
-      color: $color-red;
+
+      &.active {
+        color: $color-red;
+      }
     }
   }
-}
 
-.content {
-  &__sections {
+  .teacher-modal__sections {
     padding-top: 20px;
     overflow-y: auto;
     border: 1px solid $border-color-gray;
@@ -87,23 +84,25 @@
     border-bottom: none;
     border-right: none;
     padding-bottom: 40px;
+  }
 
-    &-title {
+  .teacher-sections {
+    &__section {
+      display: none;
+      font-size: 20px;
+      color: $color-dark-blue;
+
+      &.active {
+        display: block;
+      }
+    }
+
+    &__title {
       margin-top: 40px;
       margin-bottom: 20px;
       font-size: 24px;
       font-weight: $font-weight-semibold;
       color: $color-dark-blue;
     }
-  }
-
-  &__section {
-    display: none;
-    font-size: 20px;
-    color: $color-dark-blue;
-  }
-
-  &__section.active {
-    display: block;
   }
 }
