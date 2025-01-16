@@ -66,3 +66,45 @@ section {
     }
   }
 }
+
+.modal {
+  display: none;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background-color: $color-shadow-gray;
+
+  &.open {
+    display: flex;
+  }
+
+  &__content {
+    position: relative;
+    padding: 40px;
+    background: $color-light;
+    border-radius: $border-radius-card;
+    box-shadow: 0 10px 30px $color-shadow-gray;
+  }
+
+  &__close-btn {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: $color-gray;
+    z-index: 1000;
+
+    &:hover {
+      color: $color-dark-blue;
+      transition-duration: 0.3s;
+    }
+  }
+}
