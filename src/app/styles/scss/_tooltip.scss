@@ -20,6 +20,7 @@
     color: $color-dark-blue;
     width: max-content;
     max-width: 260px;
+    background-color: $color-light;
   }
 
   &:hover &__text {
@@ -31,7 +32,6 @@
       left: 50%;
       transform: translateX(-75%);
       z-index: 1000;
-      background-color: $color-light;
     }
   }
 }
