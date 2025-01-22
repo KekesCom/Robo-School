@@ -15,18 +15,66 @@
           <nav class="header__nav header-nav">
             <ul class="header-nav__list">
               <li>
-                <a href="#" class="header-nav__link">О школе</a>
+                <a href="#about" class="header-nav__link">О школе</a>
               </li>
               <li>
-                <a href="#" class="header-nav__link">Тренеры</a>
+                <a href="#trainers" class="header-nav__link">Тренеры</a>
               </li>
               <li>
-                <a href="#" class="header-nav__link">Стоимость</a>
+                <a href="#prices" class="header-nav__link">Стоимость</a>
               </li>
             </ul>
           </nav>
+          <div class="header-buttons">
+            <a href="tel:+78000001122" class="header-buttons__tel">
+              <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect opacity="0.4" x="0.5" y="0.5" width="43" height="43" rx="9.5" fill="white" fill-opacity="0.08" stroke="url(#paint0_linear_11_225)" />
+                <path d="M28.1668 24.3797C27.4951 24.2352 26.9637 24.5471 26.4932 24.8194C26.0114 25.1001 25.0951 25.8434 24.57 25.6531C21.8811 24.546 19.3521 22.1925 18.2574 19.4929C18.0644 18.9565 18.8042 18.0344 19.0828 17.5469C19.3532 17.0749 19.6586 16.5385 19.5193 15.8618C19.3934 15.2537 17.7652 13.1819 17.1895 12.6153C16.8098 12.2411 16.4208 12.0353 16.0215 12.002C14.5202 11.9376 12.8435 13.9407 12.5495 14.42C11.8127 15.4418 11.8169 16.8015 12.5618 18.4502C14.3572 22.8786 21.1475 29.5618 25.5925 31.4246C26.4128 31.8082 27.1629 32.0005 27.8366 32.0005C28.496 32.0005 29.0831 31.8165 29.5876 31.4516C29.9684 31.2323 32.0536 29.4724 31.9989 27.9307C31.9659 27.5378 31.7606 27.1448 31.3912 26.7644C30.8289 26.1833 28.7704 24.5065 28.1668 24.3797" fill="white" />
+                <defs>
+                  <linearGradient id="paint0_linear_11_225" x1="22" y1="0" x2="22" y2="44" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="white" />
+                    <stop offset="1" stop-color="white" stop-opacity="0" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </a>
+            <button class="header-buttons__menu">
+              <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect opacity="0.4" x="0.5" y="0.5" width="43" height="43" rx="9.5" fill="white" fill-opacity="0.08" stroke="url(#paint0_linear_11_226)" />
+                <line x1="10" y1="16" x2="34" y2="16" stroke="white" stroke-width="2" stroke-linecap="round" />
+                <line x1="10" y1="21" x2="34" y2="21" stroke="white" stroke-width="2" stroke-linecap="round" />
+                <line x1="10" y1="26" x2="21" y2="26" stroke="white" stroke-width="2" stroke-linecap="round" />
+                <defs>
+                  <linearGradient id="paint0_linear_11_226" x1="22" y1="0" x2="22" y2="44" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="white" />
+                    <stop offset="1" stop-color="white" stop-opacity="0" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </button>
+          </div>
           <a href="tel:+78000001122" class="tel">+7 800 000 11 22</a>
         </div>
+      </div>
+      <div class="burger-menu">
+        <button class="burger-menu__close">
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect opacity="0.4" x="0.5" y="0.5" width="43" height="43" rx="9.5" fill="white" fill-opacity="0.08" stroke="url(#paint0_linear_0_1)" />
+            <line x1="16.4925" y1="16" x2="27.6" y2="27.1075" stroke="white" stroke-width="2.11065" stroke-linecap="round" />
+            <line x1="16.4004" y1="27.1076" x2="27.5079" y2="16.0001" stroke="white" stroke-width="2.11065" stroke-linecap="round" />
+            <defs>
+              <linearGradient id="paint0_linear_0_1" x1="22" y1="0" x2="22" y2="44" gradientUnits="userSpaceOnUse">
+                <stop stop-color="white" />
+                <stop offset="1" stop-color="white" stop-opacity="0" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </button>
+        <ul class="burger-menu__list">
+          <li><a href="#about" class="burger-menu__link">О школе</a></li>
+          <li><a href="#trainers" class="burger-menu__link">Тренеры</a></li>
+          <li><a href="#prices" class="burger-menu__link">Стоимость</a></li>
+        </ul>
       </div>
     </header>
     <main class="main">
@@ -38,12 +86,12 @@
               Курсы повышения квалификации по робототехнике<br />
               для педагогов начальной школы
             </div>
-            <button class="btn">Записаться на курс</button>
             <img src="/static/img/student.png" alt="student promo" class="promo__img" />
+            <button class="btn">Записаться на курс</button>
           </div>
         </div>
       </section>
-      <section class="about">
+      <section class="about anchor-target" id="about">
         <div class="container">
           <div class="about__title"><b>Robo School</b> – учреждение для формирования кадрового педагогического резерва в сфере робототехники и программирования</div>
           <div class="about__content">
@@ -94,7 +142,7 @@
           </div>
         </div>
       </section>
-      <section class="teachers">
+      <section class="teachers anchor-target" id="trainers">
         <div class="container">
           <h2 class="teachers__title">Профессиональные тренеры</h2>
           <div class="teachers__content">
@@ -158,7 +206,7 @@
           </div>
         </div>
       </section>
-      <section class="prices">
+      <section class="prices anchor-target" id="prices">
         <div class="container">
           <h2 class="prices__title">Выберите нужный пакет</h2>
           <div class="prices__content">

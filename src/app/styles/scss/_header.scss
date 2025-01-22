@@ -1,11 +1,16 @@
-@import 'variables';
-
 .header {
   position: sticky;
   top: 0;
   z-index: 1000;
   padding: 30px 0;
   background-color: $color-dark-blue;
+
+  .header-buttons,
+  &__tel,
+  &__menu {
+    position: absolute;
+    display: none;
+  }
 
   &__content {
     display: flex;
@@ -29,6 +34,42 @@
         color: $color-hover-link;
         transition-duration: 0.2s;
       }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    padding: 17px 0;
+
+    .logo {
+      font-size: 20px;
+    }
+
+    &-nav {
+      &__list {
+        display: none;
+      }
+    }
+
+    .header-buttons {
+      position: relative;
+      display: flex;
+      gap: 10px;
+
+      &__tel {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      &__menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .tel {
+      display: none;
     }
   }
 }

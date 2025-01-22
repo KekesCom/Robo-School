@@ -25,4 +25,13 @@
   &:hover &__text {
     display: flex;
   }
+
+  @media (max-width: 768px) {
+    &__text {
+      left: 50%;
+      transform: translateX(-75%);
+      z-index: 1000;
+      background-color: $color-light;
+    }
+  }
 }
