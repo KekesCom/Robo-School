@@ -13,4 +13,27 @@
     font-size: 16px;
     margin-top: 5px;
   }
+
+  @media (max-width: 768px) {
+    padding: 40px 0 20px 0;
+
+    &__content {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    &__description {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+
+    .tel {
+      font-size: 16px;
+    }
+
+    .logo {
+      font-size: 18px;
+    }
+  }
 }

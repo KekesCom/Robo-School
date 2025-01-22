@@ -8,6 +8,11 @@ html {
   font-family: Jost, sans-serif;
   font-weight: $font-weight-regular;
   line-height: $line-height;
+
+  &.no-scroll {
+    overflow: hidden;
+    height: 100%;
+  }
 }
 
 section {
@@ -36,6 +41,7 @@ section {
   font-size: 30px;
   font-weight: 600;
   color: $color-light;
+
   &:hover {
     text-decoration: underline;
   }
@@ -107,4 +113,8 @@ section {
       transition-duration: 0.3s;
     }
   }
+}
+
+.anchor-target {
+  scroll-margin-top: 10px;
 }
