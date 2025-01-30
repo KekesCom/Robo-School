@@ -113,6 +113,15 @@ section {
       transition-duration: 0.3s;
     }
   }
+
+  &__close-x {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1000;
+  }
 }
 
 .anchor-target {

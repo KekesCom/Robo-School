@@ -260,6 +260,12 @@
     <div class="modal" id="modal">
       <div class="modal__content">
         <button class="modal__close-btn" id="closeModal">Закрыть</button>
+        <button class="modal__close-x" id="closeModalX">
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="1.05532" y1="-1.05532" x2="16.6082" y2="-1.05532" transform="matrix(0.681575 0.731748 -0.681575 0.731748 1 2)" stroke="#141024" stroke-width="2.11065" stroke-linecap="round" />
+            <line x1="1.05532" y1="-1.05532" x2="16.6082" y2="-1.05532" transform="matrix(0.681575 -0.731748 0.681575 0.731748 1.96094 15)" stroke="#141024" stroke-width="2.11065" stroke-linecap="round" />
+          </svg>
+        </button>
         <div class="teacher-modal">
           <div class="teacher-modal__info teacher-info">
             <img src="/static/img/marina.jpg" alt="Марина Орлова" class="teacher-info__img" />
@@ -286,6 +292,21 @@
             <button class="teacher-tabs__tab active" data-tab="education">Образование</button>
             <button class="teacher-tabs__tab" data-tab="experience">Опыт работы</button>
             <button class="teacher-tabs__tab" data-tab="awards">Награды</button>
+          </div>
+          <div class="teacher-modal__dropdown teacher-dropdown">
+            <div class="teacher-dropdown__button">
+              <span>Образование</span>
+              <span class="teacher-dropdown__arrow">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4.52875 6.92957C4.50458 6.90603 4.40125 6.81714 4.31625 6.73433C3.78167 6.24886 2.90667 4.98242 2.63958 4.31957C2.59667 4.21891 2.50583 3.9644 2.5 3.82842C2.5 3.69812 2.53 3.57392 2.59083 3.45539C2.67583 3.30764 2.80958 3.18911 2.9675 3.12417C3.07708 3.08236 3.405 3.01741 3.41083 3.01741C3.76958 2.95247 4.3525 2.91675 4.99667 2.91675C5.61042 2.91675 6.16958 2.95247 6.53375 3.00564C6.53958 3.01173 6.94708 3.07668 7.08667 3.14771C7.34167 3.27801 7.5 3.53251 7.5 3.80488V3.82842C7.49375 4.0058 7.33542 4.37884 7.32958 4.37884C7.06208 5.00597 6.23 6.24318 5.67708 6.74042C5.67708 6.74042 5.535 6.88046 5.44625 6.94135C5.31875 7.03633 5.16083 7.08341 5.00292 7.08341C4.82667 7.08341 4.6625 7.03024 4.52875 6.92957Z" fill="white" />
+                </svg>
+              </span>
+            </div>
+            <div class="teacher-dropdown__menu">
+              <div class="teacher-dropdown__option active" data-tab="education">Образование</div>
+              <div class="teacher-dropdown__option" data-tab="experience">Опыт работы</div>
+              <div class="teacher-dropdown__option" data-tab="awards">Награды</div>
+            </div>
           </div>
           <div class="teacher-modal__sections teacher-sections">
             <div class="teacher-sections__section active" id="education">

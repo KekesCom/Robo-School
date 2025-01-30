@@ -1,6 +1,7 @@
 const modal = document.getElementById('modal');
 const teacherLinks = document.querySelectorAll('.teachers-block__link');
 const closeModalButton = document.getElementById('closeModal');
+const closeModalButtonX = document.getElementById('closeModalX');
 
 const openModal = () => {
   modal.classList.add('open');
@@ -26,6 +27,8 @@ modal.addEventListener('click', (event) => {
     closeModal();
   }
 });
+
+closeModalButtonX.addEventListener('click', closeModal);
 
 const tabs = document.querySelectorAll('.teacher-tabs__tab');
 const sections = document.querySelectorAll('.teacher-sections__section');
