@@ -108,9 +108,54 @@
 
   .teacher-dropdown {
     display: none;
+    margin-top: 20px;
+    position: relative;
+
+    &__button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 0;
+      width: 100%;
+      background: $color-red;
+      color: $color-light;
+      font-size: 16px;
+      border: 1px solid $color-light;
+    }
+
+    &__arrow {
+      margin-left: 5px;
+      transition: transform 0.5s ease;
+    }
+
+    &__button.open .teacher-dropdown__arrow {
+      transform: rotate(180deg);
+    }
+
+    &__menu {
+      display: none;
+      position: absolute;
+      width: 100%;
+      top: 46px;
+    }
+
+    &__option {
+      width: 100%;
+      padding: 10px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: $color-red;
+      color: $color-light;
+      border: 1px solid $color-light;
+    }
+
+    &__option.active {
+      background: $button-color-primary-hover;
+    }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     .teacher-modal {
       width: 100%;
       height: 100%;
@@ -119,6 +164,7 @@
         border: none;
       }
     }
+
     .teacher-info {
       gap: 10px;
 
@@ -137,66 +183,21 @@
     }
 
     .teacher-dropdown {
-      margin-top: 20px;
-      position: relative;
       display: block;
-
-      &__button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 46px;
-        background: $color-red;
-        color: $color-light;
-        font-size: 16px;
-        border: 1px solid $color-light;
-      }
-
-      &__arrow {
-        margin-left: 5px;
-        transition: transform 0.5s ease;
-      }
-
-      &__button.open .teacher-dropdown__arrow {
-        transform: rotate(180deg);
-      }
-
-      &__menu {
-        display: none;
-        position: absolute;
-        width: 100%;
-        top: 46px;
-      }
 
       &__menu.open {
         display: block;
-      }
-
-      &__option {
-        width: 100%;
-        height: 46px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: $color-red;
-        color: $color-light;
-        border: 1px solid $color-light;
-      }
-
-      &__option.active {
-        background: $button-color-primary-hover;
       }
     }
   }
 }
 
-@media (max-width: 768px) {
-  .modal__close-btn {
+@media (max-width: 1024px) {
+  .modal__close-text {
     display: none;
   }
 
-  .modal__close-x {
+  .modal__close-icon {
     display: block;
   }
 

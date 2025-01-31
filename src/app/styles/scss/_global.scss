@@ -97,7 +97,7 @@ section {
     box-shadow: 0 10px 30px $color-shadow-gray;
   }
 
-  &__close-btn {
+  &__close-text {
     position: absolute;
     top: 40px;
     right: 40px;
@@ -114,7 +114,7 @@ section {
     }
   }
 
-  &__close-x {
+  &__close-icon {
     display: none;
     position: absolute;
     top: 40px;

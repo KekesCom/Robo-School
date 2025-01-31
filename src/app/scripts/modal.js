@@ -1,7 +1,13 @@
 const modal = document.getElementById('modal');
 const teacherLinks = document.querySelectorAll('.teachers-block__link');
 const closeModalButton = document.getElementById('closeModal');
-const closeModalButtonX = document.getElementById('closeModalX');
+
+const tabs = document.querySelectorAll('.teacher-tabs__tab');
+const sections = document.querySelectorAll('.teacher-sections__section');
+
+const dropdownButton = document.querySelector('.teacher-dropdown__button span');
+const defaultOption = document.querySelector('.teacher-dropdown__option[data-tab="education"]');
+const dropdownOptions = document.querySelectorAll('.teacher-dropdown__option');
 
 const openModal = () => {
   modal.classList.add('open');
@@ -11,6 +17,16 @@ const openModal = () => {
 const closeModal = () => {
   modal.classList.remove('open');
   document.body.style.overflow = '';
+
+  tabs.forEach((tab) => tab.classList.remove('active'));
+  sections.forEach((section) => section.classList.remove('active'));
+
+  defaultOption.classList.add('active');
+  document.getElementById('education').classList.add('active');
+
+  dropdownButton.textContent = defaultOption.textContent;
+  dropdownOptions.forEach((option) => option.classList.remove('active'));
+  defaultOption.classList.add('active');
 };
 
 teacherLinks.forEach((link) => {
@@ -28,19 +44,11 @@ modal.addEventListener('click', (event) => {
   }
 });
 
-closeModalButtonX.addEventListener('click', closeModal);
-
-const tabs = document.querySelectorAll('.teacher-tabs__tab');
-const sections = document.querySelectorAll('.teacher-sections__section');
-
 tabs.forEach((tab) => {
   tab.addEventListener('click', () => {
-    tabs.forEach((tabItem) => {
-      tabItem.classList.remove('active');
-    });
-    sections.forEach((section) => {
-      section.classList.remove('active');
-    });
+    tabs.forEach((tabItem) => tabItem.classList.remove('active'));
+    sections.forEach((section) => section.classList.remove('active'));
+
     tab.classList.add('active');
     const targetSection = document.getElementById(tab.dataset.tab);
     targetSection.classList.add('active');
