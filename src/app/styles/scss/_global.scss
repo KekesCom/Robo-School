@@ -84,12 +84,15 @@ section {
   height: 100%;
   z-index: 1000;
   background-color: $color-shadow-gray;
+  padding: 0 10px;
 
   &.open {
     display: flex;
   }
 
   &__content {
+    max-width: 940px;
+    width: 100%;
     position: relative;
     padding: 40px;
     background: $color-light;

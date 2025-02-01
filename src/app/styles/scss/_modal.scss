@@ -4,14 +4,15 @@
   position: relative;
   overflow: hidden;
   height: 688px;
-  width: 860px;
+  max-width: 860px;
+  width: 100%;
 
   &::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 98%;
+    width: 95%;
     height: 40px;
     background-image: $fade;
   }
@@ -155,7 +156,7 @@
     }
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 768px) {
     .teacher-modal {
       width: 100%;
       height: 100%;
@@ -192,7 +193,7 @@
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .modal__close-text {
     display: none;
   }
@@ -212,5 +213,8 @@
     width: 100%;
     height: 100%;
     margin-top: 40px;
+  }
+  .modal {
+    padding: 0;
   }
 }

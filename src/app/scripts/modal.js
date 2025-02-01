@@ -6,8 +6,9 @@ const tabs = document.querySelectorAll('.teacher-tabs__tab');
 const sections = document.querySelectorAll('.teacher-sections__section');
 
 const dropdownButton = document.querySelector('.teacher-dropdown__button span');
-const defaultOption = document.querySelector('.teacher-dropdown__option[data-tab="education"]');
 const dropdownOptions = document.querySelectorAll('.teacher-dropdown__option');
+
+const defaultOption = dropdownOptions[0];
 
 const openModal = () => {
   modal.classList.add('open');
@@ -22,11 +23,8 @@ const closeModal = () => {
   sections.forEach((section) => section.classList.remove('active'));
 
   defaultOption.classList.add('active');
-  document.getElementById('education').classList.add('active');
-
   dropdownButton.textContent = defaultOption.textContent;
-  dropdownOptions.forEach((option) => option.classList.remove('active'));
-  defaultOption.classList.add('active');
+  document.getElementById(defaultOption.dataset.tab).classList.add('active');
 };
 
 teacherLinks.forEach((link) => {
@@ -50,7 +48,6 @@ tabs.forEach((tab) => {
     sections.forEach((section) => section.classList.remove('active'));
 
     tab.classList.add('active');
-    const targetSection = document.getElementById(tab.dataset.tab);
-    targetSection.classList.add('active');
+    document.getElementById(tab.dataset.tab).classList.add('active');
   });
 });
