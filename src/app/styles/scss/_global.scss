@@ -84,12 +84,15 @@ section {
   height: 100%;
   z-index: 1000;
   background-color: $color-shadow-gray;
+  padding: 0 10px;
 
   &.open {
     display: flex;
   }
 
   &__content {
+    max-width: 940px;
+    width: 100%;
     position: relative;
     padding: 40px;
     background: $color-light;
@@ -97,7 +100,7 @@ section {
     box-shadow: 0 10px 30px $color-shadow-gray;
   }
 
-  &__close-btn {
+  &__close-text {
     position: absolute;
     top: 40px;
     right: 40px;
@@ -112,6 +115,15 @@ section {
       color: $color-dark-blue;
       transition-duration: 0.3s;
     }
+  }
+
+  &__close-icon {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1000;
   }
 }
 

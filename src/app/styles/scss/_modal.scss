@@ -4,14 +4,15 @@
   position: relative;
   overflow: hidden;
   height: 688px;
-  width: 860px;
+  max-width: 860px;
+  width: 100%;
 
   &::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 98%;
+    width: 95%;
     height: 40px;
     background-image: $fade;
   }
@@ -104,5 +105,116 @@
       font-weight: $font-weight-semibold;
       color: $color-dark-blue;
     }
+  }
+
+  .teacher-dropdown {
+    display: none;
+    margin-top: 20px;
+    position: relative;
+
+    &__button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 0;
+      width: 100%;
+      background: $color-red;
+      color: $color-light;
+      font-size: 16px;
+      border: 1px solid $color-light;
+    }
+
+    &__arrow {
+      margin-left: 5px;
+      transition: transform 0.5s ease;
+    }
+
+    &__button.open .teacher-dropdown__arrow {
+      transform: rotate(180deg);
+    }
+
+    &__menu {
+      display: none;
+      position: absolute;
+      width: 100%;
+      top: 46px;
+    }
+
+    &__option {
+      width: 100%;
+      padding: 10px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: $color-red;
+      color: $color-light;
+      border: 1px solid $color-light;
+    }
+
+    &__option.active {
+      background: $button-color-primary-hover;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .teacher-modal {
+      width: 100%;
+      height: 100%;
+
+      &__sections {
+        border: none;
+      }
+    }
+
+    .teacher-info {
+      gap: 10px;
+
+      &__text {
+        row-gap: 5px;
+      }
+
+      &__img {
+        width: auto;
+        height: 150px;
+      }
+    }
+
+    .teacher-tabs {
+      display: none;
+    }
+
+    .teacher-dropdown {
+      display: block;
+
+      &__menu.open {
+        display: block;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .modal__close-text {
+    display: none;
+  }
+
+  .modal__close-icon {
+    display: block;
+  }
+
+  .modal__content {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    padding: 40px 30px;
+  }
+
+  .teacher-modal {
+    width: 100%;
+    height: 100%;
+    margin-top: 40px;
+  }
+  .modal {
+    padding: 0;
   }
 }
